@@ -29,6 +29,14 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".RegistrosActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".PrincipalEscaner"
+            android:exported="true"/>
+
     </application>
 
 </manifest>

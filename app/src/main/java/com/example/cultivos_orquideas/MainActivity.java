@@ -11,9 +11,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+
 public class MainActivity extends AppCompatActivity {
     TextView tvWelcome;
-    Button btnRegistro, btnReportes, btnConfig;
+    Button btnRegistro, btnReportes, btnregistrarse;
     DatabaseHelper dbHelper;
 
     @Override
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnregistrarse = findViewById(R.id.btnregistrarse);
         tvWelcome = findViewById(R.id.tvWelcome);
         btnRegistro = findViewById(R.id.btnRegistro);
         btnReportes = findViewById(R.id.btnReportes);
@@ -31,16 +33,23 @@ public class MainActivity extends AppCompatActivity {
 
         tvWelcome.setText("Bienvenido " + username + " (" + role + ")");
 
-        if (!role.equals("admin") && !role.equals("tecnico")) {
-            btnReportes.setEnabled(false);
-            btnConfig.setEnabled(false);
+        if (username != null && role != null) {
+            tvWelcome.setText("Bienvenido " + username + " (" + role + ")");
+        } else {
+            tvWelcome.setText("Bienvenido invitado");
         }
+
         btnRegistro.setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
         });
 
         btnReportes.setOnClickListener(v -> {
             startActivity(new Intent(this, activity_reportes.class));
+        });
+
+        btnregistrarse.setOnClickListener(v -> {
+            Intent intent = new Intent(this, RegistrosActivity.class);
+            startActivity(intent);
         });
     }
 }

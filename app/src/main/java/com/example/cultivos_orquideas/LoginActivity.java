@@ -42,7 +42,9 @@ public class LoginActivity extends AppCompatActivity {
                 int roleIndex = cursor.getColumnIndex("role");
                 String role = roleIndex != -1 ? cursor.getString(roleIndex) : "usuario";
                 Toast.makeText(this, "Login exitoso: " + role, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, MainActivity.class));
+                Intent intent = new Intent(this, PrincipalEscaner.class);
+                startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
             }
