@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
@@ -13,37 +14,31 @@
             android:id="@+id/imageViewFoto"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Foto de la planta" />
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/tvHumedad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Humedad: -- %"
-            android:textSize="16sp"
-            android:paddingTop="12dp"/>
+            android:text="Humedad:"/>
 
         <TextView
             android:id="@+id/tvTemperatura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Temperatura: -- °C"
-            android:textSize="16sp"
-            android:paddingTop="8dp"/>
+            android:text="Temperatura:"/>
 
         <Button
             android:id="@+id/btnGuardarReporte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar"
-            android:paddingTop="16dp"/>
+            android:text="Guardar Reporte"/>
 
         <Button
             android:id="@+id/btnVolverMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Volver al Menú"
-            android:paddingTop="8dp"/>
+            android:text="Volver al Inicio"/>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

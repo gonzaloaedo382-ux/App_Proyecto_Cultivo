@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 int roleIndex = cursor.getColumnIndex("role");
                 String role = roleIndex != -1 ? cursor.getString(roleIndex) : "usuario";
                 Toast.makeText(this, "Login exitoso: " + role, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, PrincipalEscaner.class);
+                Intent intent = new Intent(this, Camara.class);
                 startActivity(intent);
                 finish();
             } else {

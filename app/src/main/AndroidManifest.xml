@@ -34,8 +34,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name=".PrincipalEscaner"
-            android:exported="true"/>
+        <activity android:name=".Camara"
+            android:exported="false"/>
+
+        <activity android:name=".resultado_planta"
+            android:exported="false" />
 
     </application>
 

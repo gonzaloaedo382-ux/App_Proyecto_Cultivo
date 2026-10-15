@@ -27,6 +27,6 @@
         android:id="@+id/btnActualizarReportes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Actualizar Reportes"/>
+        android:text="Volver al menu"/>
 
 </LinearLayout>

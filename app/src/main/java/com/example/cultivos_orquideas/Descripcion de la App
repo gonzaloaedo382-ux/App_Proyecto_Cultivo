@@ -1,0 +1,8 @@
+*App de Cultivos*
+
+En esta aplicacion se puede apreciar la utilizacion de sensor de humeda para culquier tipo de cultivos de plantas incluyendo las orquideas
+en esta te pide iniciar sesion para guardar tus datos en la base de datos esta informacion de registro es necesaria para la seguridad de los datos del usuario que esta ingresando
+una ves ingresado te da acceso a sacar foto con el android para tomarle foto a los cultivos o la planta en particular que se encuentra en un estado muy delicado,
+y una ves detectada la foto esta sera analizada y en esta parte del proceso la funcion del sensor ya que a traves de la localizacion de la imagen y el analisis profundo para detectar la cantidad de humedad que tiene junto con la
+cantidad que tiene esta aplicacion movil sirve para el cultivo en el campo incluso con el cuidado de plantas en la vida cotidiana de las personas.
+}
