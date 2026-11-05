@@ -34,8 +34,8 @@ public class resultado_planta extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
         Intent intent = getIntent();
         fotoBitmap = intent.getParcelableExtra("fotoPlanta");
-        humedad = intent.getDoubleExtra("humedad", 1.5);
-        temperatura = intent.getDoubleExtra("temperatura", 2.9);
+        humedad = intent.getDoubleExtra("humedad", 0.0);
+        temperatura = intent.getDoubleExtra("temperatura", 0.0);
         if (fotoBitmap != null) {
             imageViewFoto.setImageBitmap(fotoBitmap);
         }

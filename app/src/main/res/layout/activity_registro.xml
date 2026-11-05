@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00FDA7"
     android:orientation="vertical"
     android:padding="24dp">
 
@@ -9,30 +10,31 @@
         android:id="@+id/etUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="Usuario"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="16dp"/>
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:layout_marginBottom="16dp" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/etRole"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:hint="Rol (admin, Trabajador, usuario)"
-        android:inputType="text"
-        android:layout_marginBottom="24dp"/>
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar"/>
+        android:background="#FAF4F4"
+        android:text="Registrar" />
 
 </LinearLayout>

@@ -5,7 +5,6 @@ import java.util.Random;
 public class Sensor_Humedad {
     private int humedad;
     private long timestamp;
-    // Constructor
     public Sensor_Humedad() {
         this.humedad = 0;
         this.timestamp = System.currentTimeMillis();

@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-bom:33.1.0")
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)

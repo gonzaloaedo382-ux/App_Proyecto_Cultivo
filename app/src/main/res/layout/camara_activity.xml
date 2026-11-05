@@ -3,27 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:background="#F5F9FA"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/imageViewEscaner"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Foto de la planta"
+            android:layout_marginBottom="20dp"
             android:background="#DDDDDD"
-            android:layout_marginBottom="20dp"/>
+            android:contentDescription="Foto de la planta"
+            android:scaleType="centerCrop" />
 
         <Button
             android:id="@+id/btnIrResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ver Resultados"
-            android:enabled="false"/>
+            android:background="#F6ECEC"
+            android:backgroundTint="#F6F1F1"
+            android:enabled="false"
+            android:text="Ver Resultados" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

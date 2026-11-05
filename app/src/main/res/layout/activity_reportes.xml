@@ -3,6 +3,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBF5F5"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -10,11 +11,11 @@
         android:id="@+id/tvTituloReportes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
         android:text="Reportes de Cultivo"
         android:textSize="22sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="10dp"/>
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/listViewReportes"
@@ -22,11 +23,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp" />
+
     <Button
         android:id="@+id/btnActualizarReportes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volver al menu"/>
+        android:text="Volver al menu" />
 
 </LinearLayout>
