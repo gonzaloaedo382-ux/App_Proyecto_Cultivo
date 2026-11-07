@@ -1,8 +1,48 @@
-*App de Cultivos*
+Cultivos de Orquídeas
+Aplicación móvil desarrollada para Android diseñada para facilitar la gestión, el monitoreo y el aprendizaje sobre el cuidado óptimo de diferentes especies de orquídeas.
 
-En esta aplicacion se puede apreciar la utilizacion de sensor de humeda para culquier tipo de cultivos de plantas incluyendo las orquideas
-en esta te pide iniciar sesion para guardar tus datos en la base de datos esta informacion de registro es necesaria para la seguridad de los datos del usuario que esta ingresando
-una ves ingresado te da acceso a sacar foto con el android para tomarle foto a los cultivos o la planta en particular que se encuentra en un estado muy delicado,
-y una ves detectada la foto esta sera analizada y en esta parte del proceso la funcion del sensor ya que a traves de la localizacion de la imagen y el analisis profundo para detectar la cantidad de humedad que tiene junto con la
-cantidad que tiene esta aplicacion movil sirve para el cultivo en el campo incluso con el cuidado de plantas en la vida cotidiana de las personas.
-}
+ Tabla de Contenidos
+Descripción del Proyecto
+
+Características Principales
+
+Tecnologías Utilizadas
+
+Estructura del Proyecto
+
+Instalación y Configuración
+
+Contribución
+
+Descripción del Proyecto
+Cultivos de Orquídeas es una solución móvil orientada a entusiastas, agricultores aficionados y profesionales de la botánica que buscan llevar un control riguroso del desarrollo de sus plantas. La aplicación integra interfaces intuitivas en XML con lógica robusta en Java, permitiendo registrar datos de riego, iluminación, temperatura y estados de salud de los cultivos.
+
+Características Principales
+Registro de Cultivos: Añade nuevas orquídeas especificando su variedad, fecha de plantación y ubicación.
+
+Monitoreo de Cuidados: Visualiza parámetros recomendados de humedad, luz solar y tipo de sustrato.
+
+Interfaz Adaptativa: Diseños limpios y estructurados mediante layouts de Android nativos.
+
+Sincronización y Persistencia: Integración con bases de datos locales y remotas para asegurar la persistencia de la información del usuario.
+
+Tecnologías Utilizadas
+Plataforma: Android (Android Studio)
+
+Lenguaje: Java / XML
+
+Sistema de Construcción: Gradle
+
+Control de Versiones: Git/GITHUB
+
+Diagrama de Flujo de mi App Android Cultivos
+
+
+
+
+
+
+Cultivos de Orquídeas — Aplicación Android
+Aplicación móvil desarrollada en Java para Android, diseñada para el registro, monitoreo y gestión del cultivo de orquídeas. Permite controlar las variables del entorno, especies, riegos y cuidados necesarios para el desarrollo óptimo de las plantas.
+
+

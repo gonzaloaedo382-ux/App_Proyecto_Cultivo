@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +27,8 @@ public class Camara extends AppCompatActivity {
 
         btnIrResultado.setOnClickListener(v -> {
             Intent intent = new Intent(Camara.this, resultado_planta.class);
+            // SE ENVIA EL NOMBRE DE LA PLANTA DETECTADA A LA LIBRERÍA
+            intent.putExtra("NOMBRE_PLANTA", "Orquídea Phalaenopsis");
             startActivity(intent);
         });
     }
@@ -38,10 +39,10 @@ public class Camara extends AppCompatActivity {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");

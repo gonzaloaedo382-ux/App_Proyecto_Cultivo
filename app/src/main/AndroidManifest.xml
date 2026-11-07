@@ -37,8 +37,7 @@
         <activity android:name=".Camara"
             android:exported="false"/>
 
-        <activity android:name=".resultado_planta"
-            android:exported="false" />
+        <activity android:name=".ResultadoPlantaActivity" />
 
     </application>
 
