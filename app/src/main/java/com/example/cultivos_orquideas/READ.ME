@@ -1,0 +1,81 @@
+Visión General del Proyecto
+Nombre del Repositorio: App_Proyecto_Cultivo (perfil: gonzaloaedo382-ux)
+
+Propósito Principal: Sistema de monitoreo y control de cultivos (enfocado en orquídeas), diseñado para registrar variables ambientales críticas como temperatura y humedad.
+
+Plataforma: Aplicación nativa para dispositivos móviles Android.
+
+ Pila Tecnológica (Tech Stack)
+Lenguaje de Programación: Java.
+
+Entorno de Desarrollo: Android Studio.
+
+Base de Datos Local: SQLite (implementada mediante una clase SQLite Database Helper personalizada para almacenamiento local y persistencia offline de datos).
+
+Servicios Cloud / Backend: Integración con Firebase (para capacidades en la nube, sincronización o autenticación).
+
+Control de Versiones: Git / GitHub para el versionado y respaldo del código fuente.
+
+ Estructura de Datos y Módulos Clave
+El núcleo funcional de la aplicación gira en torno al seguimiento automatizado y manual de los parámetros vitales de las plantas:
+
+Módulo de Especies / Cultivos: Registro de las características de cada planta (nombre de la especie, condiciones óptimas y estado general).
+
+Monitoreo Ambiental: Seguimiento y control de rangos operativos para:
+
+Temperatura: Rangos ideales para evitar estrés térmico.
+
+Humedad: Control de niveles de humedad ambiental y su impacto en el riego.
+
+Gestión de Riegos y Cuidados: Historial de mantenimiento, alertas y notas sobre el estado de salud del cultivo.
+
+Arquitectura de la Aplicación (Android)
+Patrón de Persistencia: Uso de SQLite para gestionar de forma eficiente tablas locales con campos estructurados (IDs, nombres de especies, umbrales de temperatura, humedad, marcas de tiempo y estados).
+
+Capa de Datos (SQLite Helper): Clases dedicadas a la creación de bases de datos, manejo de versiones (onUpgrade, onCreate) y operaciones CRUD (Crear, Leer, Actualizar, Borrar) para los registros de cultivo.
+
+Conectividad: Conectores preparados para sincronizar o respaldar la información recolectada mediante servicios de Firebase.
+
+Cultivos de Orquídeas
+Aplicación móvil desarrollada para Android diseñada para facilitar la gestión, el monitoreo y el aprendizaje sobre el cuidado óptimo de diferentes especies de orquídeas.
+
+ Tabla de Contenidos
+Descripción del Proyecto
+
+Características Principales
+
+Tecnologías Utilizadas
+
+Estructura del Proyecto
+
+Instalación y Configuración
+
+Contribución
+
+Descripción del Proyecto
+Cultivos de Orquídeas es una solución móvil orientada a entusiastas, agricultores aficionados y profesionales de la botánica que buscan llevar un control riguroso del desarrollo de sus plantas. La aplicación integra interfaces intuitivas en XML con lógica robusta en Java, permitiendo registrar datos de riego, iluminación, temperatura y estados de salud de los cultivos.
+
+Características Principales
+Registro de Cultivos: Añade nuevas orquídeas especificando su variedad, fecha de plantación y ubicación.
+
+Monitoreo de Cuidados: Visualiza parámetros recomendados de humedad, luz solar y tipo de sustrato.
+
+Interfaz Adaptativa: Diseños limpios y estructurados mediante layouts de Android nativos.
+
+Sincronización y Persistencia: Integración con bases de datos locales y remotas para asegurar la persistencia de la información del usuario.
+
+Tecnologías Utilizadas
+Plataforma: Android (Android Studio)
+
+Lenguaje: Java / XML
+
+Sistema de Construcción: Gradle
+
+Control de Versiones: Git/GITHUB
+
+Diagrama de Flujo de mi App Android Cultivos
+
+Cultivos de Orquídeas — Aplicación Android
+Aplicación móvil desarrollada en Java para Android, diseñada para el registro, monitoreo y gestión del cultivo de orquídeas. Permite controlar las variables del entorno, especies, riegos y cuidados necesarios para el desarrollo óptimo de las plantas.
+
+
