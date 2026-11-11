@@ -1,13 +1,15 @@
 package com.example.cultivos_orquideas;
 
+/* clase planta con sus atributos que debe tener en el resultadoplanta y en la libreria */
 public class Planta {
     private String nombre;
     private String especie;
     private String luz;
     private String riego;
     private String estado;
-    private int imagenResId; // ID del recurso drawable de la imagen
+    private int imagenResId;
 
+    /* aqui se realiza un registro de cada planta detectada por la camara y verificar si hay coincidencias en la libreria */
     public Planta(String nombre, String especie, String luz, String riego, String estado, int imagenResId) {
         this.nombre = nombre;
         this.especie = especie;
@@ -16,8 +18,7 @@ public class Planta {
         this.estado = estado;
         this.imagenResId = imagenResId;
     }
-
-    // Getters
+    // Getters y los datos que debe mostrar en el resultado detectado por la libreria
     public String getNombre() { return nombre; }
     public String getEspecie() { return especie; }
     public String getLuz() { return luz; }

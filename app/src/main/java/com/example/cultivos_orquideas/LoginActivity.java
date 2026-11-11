@@ -28,16 +28,15 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> {
             String user = etUser.getText().toString().trim();
             String pass = etPass.getText().toString().trim();
-
+/* aqui se le pide al usuario rellenar los campos para continuar con el inicio de sesion del usuario*/
             if (user.isEmpty() || pass.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
                 return;
             }
-
+            /* aqui se guarda el registro de cuenta de usuario una ves que completa los campos de usuario y contraseña*/
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.rawQuery("SELECT * FROM usuarios WHERE username=? AND password=?",
                     new String[]{user, pass});
-
             if (cursor.moveToFirst()) {
                 int roleIndex = cursor.getColumnIndex("role");
                 String role = roleIndex != -1 ? cursor.getString(roleIndex) : "usuario";

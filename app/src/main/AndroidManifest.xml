@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -11,16 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cultivos_Orquideas">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity_reportes"
             android:exported="false"
@@ -30,14 +33,26 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name=".RegistrosActivity"
+        <activity
+            android:name=".RegistrosActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name=".Camara"
-            android:exported="false"/>
-
-        <activity android:name=".ResultadoPlantaActivity" />
+        <activity
+            android:name=".Camara"
+            android:exported="false" />
+        <activity
+            android:name=".resultado_planta"
+            android:exported="false" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 

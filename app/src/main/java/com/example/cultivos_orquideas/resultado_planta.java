@@ -1,23 +1,30 @@
 package com.example.cultivos_orquideas;
+
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class resultado_planta extends AppCompatActivity {
+
     private TextView txtNombre, txtEspecie, txtLuz, txtRiego, txtEstado;
     private ImageView imgPlanta;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultado_planta);
+
         txtNombre = findViewById(R.id.txtResultadoNombre);
         txtEspecie = findViewById(R.id.txtResultadoEspecie);
         txtLuz = findViewById(R.id.txtResultadoLuz);
         txtRiego = findViewById(R.id.txtResultadoRiego);
         txtEstado = findViewById(R.id.txtResultadoEstado);
         imgPlanta = findViewById(R.id.imgResultadoPlanta);
+
+        databaseHelper = new DatabaseHelper(this);
         String nombreBuscado = getIntent().getStringExtra("NOMBRE_PLANTA");
         Planta plantaEncontrada = LibreriaPlantas.obtenerPlantaPorNombre(nombreBuscado);
 
@@ -30,18 +37,20 @@ public class resultado_planta extends AppCompatActivity {
                     plantaEncontrada.getEstado(),
                     plantaEncontrada.getImagenResId()
             );
-            /* se muestra estos datos predeterminados si no encuentra coincidencia en la libreria*/
+            guardarEnBD(plantaEncontrada.getNombre(), plantaEncontrada.getEspecie(),
+                    plantaEncontrada.getLuz(), plantaEncontrada.getRiego(), plantaEncontrada.getEstado());
+
         } else {
-            mostrarDatosPlanta(
-                    "Orquídea Phalaenopsis",
-                    "Phalaenopsis amabilis",
-                    "Luz indirecta brillante",
-                    "Cada 7-10 días",
-                    "Saludable",
-                    R.drawable.phalaenopsis
-            );
+            String nomDef = "Orquídea Phalaenopsis";
+            String espDef = "Phalaenopsis amabilis";
+            String luzDef = "Luz indirecta brillante";
+            String rigDef = "Cada 7-10 días";
+            String estDef = "Saludable";
+            mostrarDatosPlanta(nomDef, espDef, luzDef, rigDef, estDef, R.drawable.phalaenopsis);
+            guardarEnBD(nomDef, espDef, luzDef, rigDef, estDef);
         }
     }
+
     public void mostrarDatosPlanta(String nombre, String especie, String luz, String riego, String estado, int imagenResId) {
         txtNombre.setText(nombre);
         txtEspecie.setText("Especie: " + especie);
@@ -49,5 +58,11 @@ public class resultado_planta extends AppCompatActivity {
         txtRiego.setText("Riego: " + riego);
         txtEstado.setText("Estado: " + estado);
         imgPlanta.setImageResource(imagenResId);
+    }
+    private void guardarEnBD(String nombre, String especie, String luz, String riego, String estado) {
+        boolean exito = databaseHelper.insertarRegistroPlanta(nombre, especie, luz, riego, estado);
+        if (exito) {
+            Toast.makeText(this, "Guardado en reportes exitosamente", Toast.LENGTH_SHORT).show();
+        }
     }
 }

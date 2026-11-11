@@ -16,37 +16,31 @@ public class MainActivity extends AppCompatActivity {
     TextView tvWelcome;
     Button btnRegistro, btnReportes, btnregistrarse;
     DatabaseHelper dbHelper;
-
+/* se mmuestra al usuario la interfaz inicial de la app movil de cultivos*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         btnregistrarse = findViewById(R.id.btnregistrarse);
         tvWelcome = findViewById(R.id.tvWelcome);
         btnRegistro = findViewById(R.id.btnRegistro);
         btnReportes = findViewById(R.id.btnReportes);
         dbHelper = new DatabaseHelper(this);
-
         String username = getIntent().getStringExtra("username");
         String role = getIntent().getStringExtra("role");
-
         tvWelcome.setText("Bienvenido " + username + " (" + role + ")");
-
         if (username != null && role != null) {
             tvWelcome.setText("Bienvenido " + username + " (" + role + ")");
         } else {
             tvWelcome.setText("Bienvenido invitado");
         }
-
+        /* aqui son las opciones que el usuario selecciona y lo manda a distintas ventanas como registro o reportes */
         btnRegistro.setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
         });
-
         btnReportes.setOnClickListener(v -> {
             startActivity(new Intent(this, activity_reportes.class));
         });
-
         btnregistrarse.setOnClickListener(v -> {
             Intent intent = new Intent(this, RegistrosActivity.class);
             startActivity(intent);

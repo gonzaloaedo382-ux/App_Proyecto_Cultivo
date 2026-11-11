@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F7F4"> <!-- Fondo verde muy claro, estilo natural -->
+    android:background="#F2F7F4">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -15,8 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Título descriptivo superior -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +24,6 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <!-- Contenedor con esquinas redondeadas para la vista previa de la cámara -->
         <androidx.cardview.widget.CardView
             android:layout_width="280dp"
             android:layout_height="280dp"
@@ -43,7 +40,6 @@
                 android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Botón moderno con color corporativo y bordes redondeados -->
         <Button
             android:id="@+id/btnIrResultado"
             android:layout_width="match_parent"
@@ -58,6 +54,4 @@
             app:cornerRadius="12dp" />
 
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
