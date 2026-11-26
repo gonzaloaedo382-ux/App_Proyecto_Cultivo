@@ -1,18 +1,24 @@
 package com.example.cultivos_orquideas;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.ImageView;
-import androidx.annotation.Nullable;
+import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class Camara extends AppCompatActivity {
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
     private ImageView imageView;
     private Button btnIrResultado;
+    private ActivityResultLauncher<Intent> tomarFotoLauncher;
+    private ActivityResultLauncher<String> pedirPermisoLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,31 +29,57 @@ public class Camara extends AppCompatActivity {
         btnIrResultado = findViewById(R.id.btnIrResultado);
         btnIrResultado.setEnabled(false);
 
-        abrirCamara();
+        // 1. Contrato para recibir la foto de la cámara
+        tomarFotoLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        Bundle extras = result.getData().getExtras();
+                        if (extras != null) {
+                            Bitmap imageBitmap = (Bitmap) extras.get("data");
+                            imageView.setImageBitmap(imageBitmap);
+                            btnIrResultado.setEnabled(true);
+                        }
+                    } else {
+                        Toast.makeText(this, "Captura cancelada", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        // 2. Contrato para pedir el permiso de la cámara en tiempo de ejecución
+        pedirPermisoLauncher = registerForActivityResult(
+                new ActivityResultContracts.RequestPermission(),
+                isGranted -> {
+                    if (isGranted) {
+                        abrirCamaraReal();
+                    } else {
+                        Toast.makeText(this, "Se necesita el permiso de cámara para continuar", Toast.LENGTH_LONG).show();
+                        finish(); // Si rechaza el permiso, regresa de forma segura
+                    }
+                }
+        );
+
+        // Al iniciar la actividad, verificamos el permiso antes de abrir la cámara
+        verificarYAbrirCamara();
 
         btnIrResultado.setOnClickListener(v -> {
             Intent intent = new Intent(Camara.this, resultado_planta.class);
-            // SE ENVIA EL NOMBRE DE LA PLANTA DETECTADA A LA LIBRERÍA
             intent.putExtra("NOMBRE_PLANTA", "Orquídea Phalaenopsis");
             startActivity(intent);
         });
     }
 
-    private void abrirCamara() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+    private void verificarYAbrirCamara() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            abrirCamaraReal();
+        } else {
+            // Si no está concedido, lo pedimos en pantalla
+            pedirPermisoLauncher.launch(Manifest.permission.CAMERA);
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
-            btnIrResultado.setEnabled(true);
-        }
+    private void abrirCamaraReal() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        tomarFotoLauncher.launch(takePictureIntent);
     }
 }

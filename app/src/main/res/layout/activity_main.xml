@@ -60,11 +60,12 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="12dp" />
+
         <Button
             android:id="@+id/btnregistrarse"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:backgroundTint="#5C7A63"
+            android:backgroundTint="#3F834D"
             android:text="Registrarse"
             android:textColor="#FFFFFF"
             android:textSize="16sp"

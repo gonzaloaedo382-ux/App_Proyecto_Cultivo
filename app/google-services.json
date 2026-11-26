@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "289063498205",
+    "project_id": "cultivosorquideas-1adbc",
+    "storage_bucket": "cultivosorquideas-1adbc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289063498205:android:333074fe99582132920634",
+        "android_client_info": {
+          "package_name": "com.example.cultivos_orquideas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-SyuEhS2lKHhOM-atp66aQC_VQrY6C4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -19,7 +19,7 @@ public class RegistrosActivity extends AppCompatActivity {
         EditText etUser, etPass, etRole;
         Button btnGuardar;
         DatabaseHelper dbHelper;
-
+/* aqui se asignan los campos de usuario de role y de la contraseña del usuario que se esta registrando */
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class RegistrosActivity extends AppCompatActivity {
                 String user = etUser.getText().toString().trim();
                 String pass = etPass.getText().toString().trim();
                 String role = etRole.getText().toString().trim();
-
+/* aqui el sistema envia una interfaz al usuario para que complete todos los campos de registro rol nombre y contraseña */
                 if (user.isEmpty() || pass.isEmpty() || role.isEmpty()) {
                     Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
                     return;
@@ -49,7 +49,7 @@ public class RegistrosActivity extends AppCompatActivity {
 
                 long result = db.insert("usuarios", null, values);
                 db.close();
-
+/* aqui se marca si el usuario relleno los campos de rol nombre y contraseña y se marca como valido */
                 if (result != -1) {
                     Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
                     finish();

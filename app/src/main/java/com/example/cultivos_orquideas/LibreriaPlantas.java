@@ -15,6 +15,7 @@ public class LibreriaPlantas {
                 "Saludable",
                 R.drawable.phalaenopsis
         ));
+        /* si no encuentra coincidencias en la libreria marca automaticamente phalaenopsis*/
 
         listaPlantas.add(new Planta(
                 "Orquídea Cattleya",
@@ -39,8 +40,7 @@ public class LibreriaPlantas {
                 "Luz filtrada abundante",
                 "Cada 5-9 días",
                 "Requiere atención",
-                R.drawable.Tomatera
-        ));
+                R.drawable.tomatera  ));
 
         listaPlantas.add(new Planta(
                 "Helecho",
@@ -48,7 +48,7 @@ public class LibreriaPlantas {
                 "Luz filtrada abundante",
                 "Cada 3-5 días",
                 "No Requiere mucha atención",
-                R.drawable.Helecho
+                R.drawable.helecho
         ));
         listaPlantas.add(new Planta(
                 "Palto",
@@ -56,7 +56,7 @@ public class LibreriaPlantas {
                 "Luz filtrada abundante",
                 "Cada 4-7 días",
                 "Requiere atención",
-                R.drawable.Palto
+                R.drawable.palto
         ));
         listaPlantas.add(new Planta(
                 "Calendula",
@@ -64,7 +64,7 @@ public class LibreriaPlantas {
                 "Luz filtrada abundante",
                 "Cada 3-8 días",
                 "En Floracion",
-                R.drawable.Calendula
+                R.drawable.calendula
         ));
         listaPlantas.add(new Planta(
                 "Pasiflora",
@@ -72,7 +72,7 @@ public class LibreriaPlantas {
                 "Mucha luz sin sol directo",
                 "Cada 6-10 días",
                 "Requiere atención",
-                R.drawable.Pasiflora
+                R.drawable.pasiflora
         ));
         listaPlantas.add(new Planta(
                 "Cayena",
@@ -80,7 +80,7 @@ public class LibreriaPlantas {
                 "Luz filtrada abundante",
                 "Cada 5-9 días",
                 "En Floracion",
-                R.drawable.Cayena
+                R.drawable.cayena
         ));
         listaPlantas.add(new Planta(
                 "Diente de Leon",
@@ -88,7 +88,7 @@ public class LibreriaPlantas {
                 "Luz filtrada abundante",
                 "Cada 4-8 días",
                 "Requiere atención",
-                R.drawable.Diente_de_leon
+                R.drawable.dientedeleon
         ));
     }
     /* se muestra la planta encontrada en la biblioteca buscada por el nombre */

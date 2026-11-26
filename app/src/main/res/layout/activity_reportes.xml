@@ -26,9 +26,9 @@
         android:dividerHeight="1dp" />
 
     <Button
-        android:id="@+id/btnActualizarReportes"
+        android:id="@+id/btnVolveralmenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volver al menu" />
+        android:text="Volver_al_menu" />
 
 </LinearLayout>
